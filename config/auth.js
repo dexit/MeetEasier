@@ -1,11 +1,11 @@
 // expose our config directly to our application using module.exports
+require('dotenv').config();
+
 module.exports = {
-  // this user MUST have full access to all the room accounts
-  'exchange' : {
-    'username'  : process.env.USERNAME || 'SVCACCT_EMAIL@DOMAIN.COM',
-    'password'  : process.env.PASSWORD || 'PASSWORD',
-    'uri'       : 'https://outlook.office365.com/EWS/Exchange.asmx'
+  exchange: {
+    username: process.env.USERNAME,
+    password: process.env.PASSWORD,
+    uri: process.env.EWS_URI
   },
-  // Ex: CONTOSO.COM, Contoso.com, Contoso.co.uk, etc.
-  'domain' : process.env.DOMAIN || 'DOMAIN.COM'
+  domain: process.env.DOMAIN
 };
